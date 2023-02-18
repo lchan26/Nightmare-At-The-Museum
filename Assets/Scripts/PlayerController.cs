@@ -41,4 +41,12 @@ public class PlayerController : MonoBehaviour
         }
         gameObject.GetComponent<Rigidbody>().velocity = speed * dir.normalized;
     }
+
+    void OnTriggerStay(Collider other) 
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }
